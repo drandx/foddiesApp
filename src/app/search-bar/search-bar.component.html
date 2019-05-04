@@ -12,5 +12,24 @@
       <span id="text">Time Range: </span>
       <igx-slider id="slider" [type]="sliderType.RANGE" [minValue]="0" [maxValue]="24" [lowerBound]="0" [upperBound]="24" [(ngModel)]="priceRange"></igx-slider>
     </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <mat-checkbox class="example-margin" [(ngModel)]="checked">
+            Wheelchair accessible <i class="material-icons">accessible</i>
+          </mat-checkbox>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <mat-form-field>
+            <mat-label>Gender</mat-label>
+            <mat-select [placeholder]="'Gender'">
+              <mat-option *ngFor="let gender of genders" [value]="gender">
+                {{gender}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
   </div>
 </form>
