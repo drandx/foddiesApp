@@ -1,0 +1,14 @@
+<form (ngSubmit)="submitForm()">
+  <mat-form-field class="field">
+    <input matInput id="searchQuery" [placeholder]="'What would you like to search for?'">
+    <i matSuffix class="material-icons">search</i>
+    <!--<mat-error *ngIf=".hasError('required')">
+      {{ prStrings.SERIAL_NUMBER_FORM_ERROR | translate }}</mat-error>-->
+  </mat-form-field>
+</form>
+<div>
+  <mat-slider [displayWith]="" [invert]="false" [max]="24" [min]="0" [step]="1" [thumbLabel]="true"
+    [tickInterval]="1" [value]="sliderValue" (change)="onChange($event)" (input)="onThumbMove($event)">
+  </mat-slider>
+</div>
+<!--<button class="btn btn" type="submit">Submit</button>-->
