@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-
+import { IgxSliderModule } from 'igniteui-angular';
 import { LayoutModule } from '@angular/cdk/layout';
 
 //
@@ -79,6 +79,8 @@ import { MatTableModule } from '@angular/material/table';
 
     LayoutModule,
 
+    IgxSliderModule,
+
     MatAutocompleteModule,
     MatCheckboxModule,
     MatDatepickerModule,
@@ -130,6 +132,8 @@ import { MatTableModule } from '@angular/material/table';
 
     LayoutModule,
 
+    IgxSliderModule,
+    
     MatAutocompleteModule,
     MatCheckboxModule,
     MatDatepickerModule,

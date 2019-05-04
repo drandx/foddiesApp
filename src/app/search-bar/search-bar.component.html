@@ -1,14 +1,16 @@
 <form (ngSubmit)="submitForm()">
-  <mat-form-field class="field">
-    <input matInput id="searchQuery" [placeholder]="'What would you like to search for?'">
-    <i matSuffix class="material-icons">search</i>
-    <!--<mat-error *ngIf=".hasError('required')">
-      {{ prStrings.SERIAL_NUMBER_FORM_ERROR | translate }}</mat-error>-->
-  </mat-form-field>
+  <div id="search-bar">
+    <mat-form-field class="field">
+      <input matInput id="searchQuery" [placeholder]="'Search around what address?'">
+      <i matSuffix class="material-icons">search</i>
+    </mat-form-field>
+    <span class="filtersDisplayButton" *ngIf="!showFilters" (click)="showFilters=!showFilters">Show Filters <i class="material-icons">expand_more</i></span>
+    <span class="filtersDisplayButton" *ngIf="showFilters" (click)="showFilters=!showFilters">Hide Filters <i class="material-icons">expand_less</i></span>
+  </div>
+  <div id="filters" *ngIf="showFilters">
+    <div id="slider-container">
+      <span id="text">Time Range: </span>
+      <igx-slider id="slider" [type]="sliderType.RANGE" [minValue]="0" [maxValue]="24" [lowerBound]="0" [upperBound]="24" [(ngModel)]="priceRange"></igx-slider>
+    </div>
+  </div>
 </form>
-<div>
-  <mat-slider [displayWith]="" [invert]="false" [max]="24" [min]="0" [step]="1" [thumbLabel]="true"
-    [tickInterval]="1" [value]="sliderValue" (change)="onChange($event)" (input)="onThumbMove($event)">
-  </mat-slider>
-</div>
-<!--<button class="btn btn" type="submit">Submit</button>-->

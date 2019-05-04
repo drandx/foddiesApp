@@ -7,4 +7,33 @@ form{
 }
 mat-slider {
     width: 100%;
+    padding: 8px 0px;
+}
+
+.filtersDisplayButton {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 5px;
+    cursor: pointer;
+    color: #0070EB;
+}
+
+p, span, h1, h2, h3, h4, div {
+    color: #404041;
+}
+
+#slider-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    #text {
+        max-width: 200px;
+        width: 50%;
+        margin-right: 10px;
+    }
+    #slider {
+        width: 100%;
+    }
 }
