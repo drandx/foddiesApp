@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter , Output } from '@angular/core';
 import { AngularMaterialModule } from '../shared/angular-material.module';
 import { SliderType } from "igniteui-angular";
 
@@ -7,24 +7,38 @@ import { SliderType } from "igniteui-angular";
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.scss']
 })
-export class SearchBarComponent implements OnInit {
+export class SearchBarComponent {
+
   public sliderType = SliderType;
   public priceRange: PriceRange = new PriceRange(0, 24);
   
   public genders: String[] = ["Male", "Female", "Other", "Prefer not to specify"];
   public languages: String[] = ["English", "Español", "Francais", "Polish", "عربي", "كردي", "Mandarin"];
 
+  public inputField = "";
+
   public showFilters = false;
 
   public checked: boolean = false;
   
-  constructor() { }
+  public data;
+  public data_first20;
 
-  ngOnInit() {
-  }
+  public form_submitted: boolean = false;
+
+  @Output() FormSubmitted: EventEmitter<any> = new EventEmitter();
+  
+
+  constructor() { }
 
   onChange(event) {
     console.log("onChange - ", event);
+  }
+
+  submitForm() {
+    console.log("Form submit");
+    this.form_submitted = true;
+    this.FormSubmitted.emit(this.inputField);
   }
 }
 

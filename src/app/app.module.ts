@@ -12,12 +12,14 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { HereMapComponent } from './here-map/here-map.component';
+import { DistributorCardComponent } from './distributor-card/distributor-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     HereMapComponent,
+    DistributorCardComponent,
   ],
   imports: [
     BrowserModule,

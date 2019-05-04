@@ -1,7 +1,7 @@
 <form (ngSubmit)="submitForm()">
   <div id="search-bar">
     <mat-form-field class="field">
-      <input matInput id="searchQuery" [placeholder]="'Search around what address?'">
+      <input matInput id="searchQuery" name="inputField" [(ngModel)]="inputField" [placeholder]="'Search around what address?'">
       <i matSuffix class="material-icons">search</i>
     </mat-form-field>
     <span class="filtersDisplayButton" *ngIf="!showFilters" (click)="showFilters=!showFilters">Show Filters <i class="material-icons">expand_more</i></span>
@@ -10,12 +10,12 @@
   <div id="filters" *ngIf="showFilters">
     <div id="slider-container">
       <span id="text">Time Range: </span>
-      <igx-slider id="slider" [type]="sliderType.RANGE" [minValue]="0" [maxValue]="24" [lowerBound]="0" [upperBound]="24" [(ngModel)]="priceRange"></igx-slider>
+      <igx-slider id="slider" [type]="sliderType.RANGE" [minValue]="0" [maxValue]="24" [lowerBound]="0" [upperBound]="24" [(ngModel)]="priceRange" [ngModelOptions]="{standalone: true}"></igx-slider>
     </div>
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-6">
-          <mat-checkbox class="example-margin" [(ngModel)]="checked">
+          <mat-checkbox class="example-margin" name='temp' [(ngModel)]="checked">
             Wheelchair accessible <i class="material-icons">accessible</i>
           </mat-checkbox>
         </div>
