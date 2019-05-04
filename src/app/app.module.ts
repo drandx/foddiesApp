@@ -10,11 +10,13 @@ import { AngularMaterialModule } from './shared/angular-material.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { HereMapComponent } from './here-map/here-map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
+    HereMapComponent,
   ],
   imports: [
     BrowserModule,
