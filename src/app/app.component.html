@@ -1,7 +1,7 @@
 <div class="container .12">
   <app-search-bar class="col-xs-12" (FormSubmitted)="showResults($event)">
   </app-search-bar>
-  <app-here-map class="col-xs-12">
+  <app-here-map [onClickCardListener]="onClickCard" class="col-xs-12">
   </app-here-map>
   <ng-container *ngIf="form_submitted">
     <app-distributor-card *ngFor="let data of data_first20" [info]="data" (click)="onClick(data)">

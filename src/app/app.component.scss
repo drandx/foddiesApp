@@ -5,3 +5,22 @@
     align-items: center;
     flex-direction: column;
 }
+
+.feedback-icon-container {
+position: fixed;
+bottom: 16px;
+left: 16px;
+text-decoration: none;
+
+&.feedback-disabled {
+    pointer-events: none;
+}
+
+.feedback-icon {
+    height: 24px;
+}
+
+.feedback-icon.light {
+    filter: invert(88%) sepia(59%) saturate(4335%) hue-rotate(182deg) brightness(122%) contrast(98%);  
+}
+}

@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { Subject } from 'rxjs';
 
 declare var H: any;
 
@@ -14,6 +15,9 @@ export class HereMapComponent implements OnInit {
 
   private map: any;
 
+  @Input() onClickCardListener: Subject<any>;
+  onClickCardSubscription;
+
   @ViewChild("map")
   public mapElement: ElementRef;
 
@@ -25,6 +29,9 @@ export class HereMapComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.onClickCardSubscription = this.onClickCardListener && this.onClickCardListener.subscribe( locnData => {
+      this.onChangeLocation(this.map, locnData.lat, locnData.lng);
+    });
   }
 
   renderMap(lat: string, lng: string) {
@@ -33,6 +40,7 @@ export class HereMapComponent implements OnInit {
 
   //41.989378,-87.6579677
   onChangeLocation(map, lat, lng) {
+    console.log("received lat: ", lat , " & lng: ", lng);
     // Create the parameters for the routing request:
     var routingParameters = {
       // The routing mode:
